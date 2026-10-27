@@ -9,20 +9,20 @@ import jakarta.persistence.*;
 
 @Entity 
 
-public class aine {
+public class Substance {
     @Id 
     @GeneratedValue (strategy = GenerationType.AUTO)
         private Long id;
 
         private String nimi;
 
-        @OneToMany (mappedBy = "aine")
-        private  List<kayttaja> kayttajat;
+        @OneToMany (mappedBy = "substance")
+        private  List<AppUser> appUsers;
 
-        public aine() {
+        public Substance() {
         }
 
-        public aine(Long id, String nimi) {
+        public Substance(Long id, String nimi) {
             this.id = id;
             this.nimi = nimi;
         }
@@ -45,7 +45,7 @@ public class aine {
 
         @Override
         public String toString() {
-            return "aine [id=" + id + ", nimi=" + nimi + ", aineet=" + aineet + "]";
+            return "aine [id=" + id + ", nimi=" + nimi + "]";
         }
 
         
