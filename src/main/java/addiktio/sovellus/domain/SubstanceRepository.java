@@ -1,5 +1,7 @@
 package addiktio.sovellus.domain;
 
-public interface SubstanceRepository {
+import org.springframework.data.repository.*;
+
+public interface SubstanceRepository extends CrudRepository<Substance, Long> {
 
 }
