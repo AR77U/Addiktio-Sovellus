@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <title>Leaderboard</title>
+</head>
+<body>
+    <h1>Off That! Leaderboard</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>Käyttäjä</th>
+            <th>Off:</th>
+            <th>Putki</th>
+        </tr>
+        <tr th:each = "kayttaja : ${kayttajat}">
+            <td th:text="${kayttaja.kayttajanimi}"></td>
+            <td th:text="${kayttaja.aine}"></td>
+            <td th:text="${kayttaja.putki}"></td>
+        </tr>
+    </table>
+    
+</body>
+</html>
