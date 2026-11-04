@@ -33,7 +33,7 @@ public class LeaderboardController {
         this.substanceRepository = substanceRepository;
         this.streakService = streakService;
     }
-    @GetMapping("/leaderboard")
+    @GetMapping("/")
     public String leaderBoard(Model model) {
 
         List<LeaderboardStreak> rivit = new ArrayList<>();
