@@ -1,7 +1,9 @@
 package addiktio.sovellus.domain;
 
 import jakarta.persistence.Entity;
-
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
@@ -19,8 +21,12 @@ public class DailyEntry {
 
     private LocalDate pvm;
     private boolean onnistuminen;
+
+    @Min (1)
+    @Max (5)
     private int hankaluusaste;
 
+    @Size (max = 1000)
     @Column (length = 1000)
     private String mietteet;
 

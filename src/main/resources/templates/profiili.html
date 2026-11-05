@@ -10,6 +10,7 @@ xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity6">
     <h1>Kirjauksesi <span sec:authentication="name"></span></h1>
     <h2>Streakin pituus: <span th:text ="${streakit}"></span></h2>
     <a class="btn btn-primary" th:href="@{/}">Leaderboard</a>
+    <a class="btn btn-primary" th:href="@{/add}">Uusi kirjaus</a>
     <table class="table table-striped">
         <tr>
             <th>Päivämäärä</th>
@@ -23,6 +24,10 @@ xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity6">
             <td th:text="${kirjaus.onnistuminen}"></td>
             <td th:text="${kirjaus.hankaluusaste}"></td>
             <td th:text="${kirjaus.Mietteet}"></td>
+            <td><a th:href="@{/edit/{id}(id=${kirjaus.id})}">Muokkaa</a></td>
+           <form th:action="@{/delete/{id}(id=${kirjaus.id})}" method="post">
+            <td><input type="submit" value="Poista" class="btn btn-sm btn-danger"></td>
+           </form>
             
         </tr>
     </table>

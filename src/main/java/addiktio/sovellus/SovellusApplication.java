@@ -41,26 +41,26 @@ public class SovellusApplication {
 			AppUser user2 = new AppUser(null, "sonni", "$2a$10$UMMD/tdCxoW5BaiQojXIwuv1x64sBWUQfwKbUp607GOKILxTDN52W", "admin", substance1); //salasana: sonni123
 			aRepo.save(user2);
 
-			DailyEntry entry1 = new DailyEntry(null, LocalDate.now(), true, 3, null, user1);
+			DailyEntry entry1 = new DailyEntry(null, LocalDate.now().minusDays(1), true, 3, null, user1);
 			deRepo.save(entry1);
-			DailyEntry entry2 = new DailyEntry(null, LocalDate.now().minusDays(1), true, 4, null, user1);
+			DailyEntry entry2 = new DailyEntry(null, LocalDate.now().minusDays(2), true, 4, null, user1);
 			deRepo.save(entry2);
-			DailyEntry entry3 = new DailyEntry(null, LocalDate.now().minusDays(2), true, 5, null, user1);
+			DailyEntry entry3 = new DailyEntry(null, LocalDate.now().minusDays(3), true, 5, null, user1);
 			deRepo.save(entry3);
-			DailyEntry entry4 = new DailyEntry(null, LocalDate.now().minusDays(3), true, 2, "Olipa helpon tuntuista", user1);
+			DailyEntry entry4 = new DailyEntry(null, LocalDate.now().minusDays(4), true, 2, "Olipa helpon tuntuista", user1);
 			deRepo.save(entry4);
-			DailyEntry entry5 = new DailyEntry(null, LocalDate.now().minusDays(4), false, 5, null, user1);
+			DailyEntry entry5 = new DailyEntry(null, LocalDate.now().minusDays(5), false, 5, null, user1);
 			deRepo.save(entry5);
 
-			DailyEntry sonniEntry1 = new DailyEntry(null, LocalDate.now(), true, 2, null, user2);
+			DailyEntry sonniEntry1 = new DailyEntry(null, LocalDate.now().minusDays(1), true, 2, null, user2);
 			deRepo.save(sonniEntry1);
-			DailyEntry sonniEntry2 = new DailyEntry(null, LocalDate.now().minusDays(1), true, 4, null, user2);
+			DailyEntry sonniEntry2 = new DailyEntry(null, LocalDate.now().minusDays(2), true, 4, null, user2);
 			deRepo.save(sonniEntry2);
-			DailyEntry sonniEntry3 = new DailyEntry(null, LocalDate.now().minusDays(2), true, 5, "Hyvin raskas päivä", user2);
+			DailyEntry sonniEntry3 = new DailyEntry(null, LocalDate.now().minusDays(3), true, 5, "Hyvin raskas päivä", user2);
 			deRepo.save(sonniEntry3);
-			DailyEntry sonniEntry4 = new DailyEntry(null, LocalDate.now().minusDays(3), true, 2, null, user2);
+			DailyEntry sonniEntry4 = new DailyEntry(null, LocalDate.now().minusDays(4), true, 2, null, user2);
 			deRepo.save(sonniEntry4);
-			DailyEntry sonniEntry5 = new DailyEntry(null, LocalDate.now().minusDays(4), true, 5, null, user2);
+			DailyEntry sonniEntry5 = new DailyEntry(null, LocalDate.now().minusDays(5), true, 5, null, user2);
 			deRepo.save(sonniEntry5);
 		};
 	}
