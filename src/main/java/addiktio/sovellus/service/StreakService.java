@@ -23,10 +23,10 @@ public class StreakService {
         if (streak.isEmpty()) {
             return 0;
         }
-        LocalDate etsittyPaiva = LocalDate.now().minusDays(1);
+        LocalDate etsittyPaiva = streak.get(0).getPvm();
 
-        if (streak.get(0).getPvm().equals(LocalDate.now())) {
-            etsittyPaiva = LocalDate.now();
+        if (streak.get(0).getPvm().isBefore(LocalDate.now().minusDays(2))) {
+            return 0;
         }
 
          int putki = 0;
