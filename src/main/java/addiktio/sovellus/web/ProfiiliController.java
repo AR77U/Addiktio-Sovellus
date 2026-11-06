@@ -60,8 +60,13 @@ public String saveOnnistuminen(@Valid @ModelAttribute ("uusiKirjaus") DailyEntry
     if (bindingResult.hasErrors()) {
         return "uusiKirjaus";
     }
+    
     AppUser appUser = appUserRepository.findByKayttajanimi(principal.getName())
     .orElseThrow(()-> new UsernameNotFoundException("Ei löydy"));
+
+    if (dailyEntryRepository.findByAppUserAndPvm(appUser, LocalDate.now()).isPresent()) {
+        return "redirect:/profiili";
+    }
     dailyEntry.setAppUser(appUser);
     dailyEntry.setPvm(LocalDate.now());
     dailyEntryRepository.save(dailyEntry);
